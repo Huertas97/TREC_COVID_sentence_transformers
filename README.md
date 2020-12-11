@@ -8,7 +8,7 @@
  
  TREC-COVID [TREC-COVID](https://ir.nist.gov/covidSubmit/index.html)  is an information retrieval (IR) shared task initiated to support clinicians and clinical research during the COVID-19 pandemic. According to [[1]](#1), the basic TREC (Text REtrieval Conference) ad hoc evaluation structure provides participants with a corpus and set of topics (which they fashion into queries entered into their IR systems). Participants then submit “runs” of up to N results per topic (usually N = 1000). 
  
- In this repository the code to evaluate  [Sentence Transformers](https://www.sbert.net/index.html) models in TREC-COVID collection is available. To evaluate a model in this IR task the approach explained in [[2]](#2) is followed. 
+ In this repository the code to evaluate  [Sentence Transformers](https://www.sbert.net/index.html) models in TREC-COVID collection is available. To evaluate a model in this IR task the approach explained in [[2]](#2) is followed with slightly differeces. For the BM25 relevance score we apply the well-known BM25 Okapi algorithm, and for the sentence embeddings computing we apply bi-encoders. Bi-encoders have less accuracy than cross-encoders [REFERENCIA], but requires less computational sources and make feasible its application into real-world problems.  
  
  
  # Scripts
@@ -17,7 +17,7 @@
  
  * The script `build_trec_covid_data.py` download the TREC-COVID data and CORD-19 documents valid for TREC-COVID round 1. 
  
- * The script `bm25_trec_covid.py` computes the relevance scores with [BM25 Okapi algorithm](https://github.com/dorianbrown/rank_bm25) between the different fields of the topic and the different facets of each document. For each topic the scores are log-normalised setting the log-base such that the highest scoring document hasa value of nine. 
+ * The script `bm25_trec_covid.py` computes the relevance scores with [BM25 Okapi algorithm](https://github.com/dorianbrown/rank_bm25) between the different fields of the topic and the different facets of each document. For each topic the scores are log-normalised setting the log-base such that the highest scoring document has a value of nine. 
  
  * The script `cos_sim_trec_covid.py` computes the embeddings for the different fields of the topic and the title and abstract facets of each document and reports the semantic similarity with a cosine similarity score.
  
@@ -25,8 +25,9 @@
  
  <img src="https://latex.codecogs.com/png.latex?%5Clarge%20%5Cpsi%20%28T_i%2C%20d%29%20%3D%20%5Clog_z%28%5Csum%5E%7Bt%5Cin%20T_%7Bi%7D%20%7D%20%5Csum%5E%7Bf%5Cin%20d%20%7DBM25%28t%2Cf%29%29%20&plus;%20%5Csum%5E%7Bt%5Cin%20T_%7Bi%7D%20%7D%20%5Csum%5E%7Bf%5Cin%20d%20%7Dcos%28e%28t%29%2C%20e%28f%29%29">
 
- <img src="https://latex.codecogs.com/png.latex?\inline&space;\LARGE&space;z">
-
+ <img src="https://latex.codecogs.com/png.latex?\inline&space;\LARGE&space;z"> represents the adjusted log-base such that the highest scoring document has a value of nine
+ 
+<img src=https://latex.codecogs.com/png.latex?\inline&space;\LARGE&space;t&space;\in&space;T_i> represents possible field of topic <img src=https://latex.codecogs.com/png.latex?\inline&space;\LARGE&space;T_i>
  
  
 ## References
