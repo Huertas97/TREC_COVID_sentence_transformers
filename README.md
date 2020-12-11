@@ -26,8 +26,8 @@
   <img src="https://latex.codecogs.com/png.latex?%5Clarge%20%5Cpsi%20%28T_i%2C%20d%29%20%3D%20%5Clog_z%28%5Csum%5E%7Bt%5Cin%20T_%7Bi%7D%20%7D%20%5Csum%5E%7Bf%5Cin%20d%20%7DBM25%28t%2Cf%29%29%20&plus;%20%5Csum%5E%7Bt%5Cin%20T_%7Bi%7D%20%7D%20%5Csum%5E%7Bf%5Cin%20d%20%7Dcos%28e%28t%29%2C%20e%28f%29%29">
 </p>
 
-
- <img src="https://latex.codecogs.com/png.latex?\inline&space;\LARGE&space;z"> represents the adjusted log-base such that the highest scoring document has a value of nine
+Where:
+ <img src="https://latex.codecogs.com/png.latex?\inline&space;\large&space;z"> represents the adjusted log-base such that the highest scoring document has a value of nine
  
 <img src=https://latex.codecogs.com/png.latex?\inline&space;\large&space;t&space;\in&space;T_i> represents possible fields of topic <img src=https://latex.codecogs.com/png.latex?\inline&space;\large&space;T_i> (i.e, query, question and narrative). 
 
@@ -39,8 +39,59 @@
 
 <img src=https://latex.codecogs.com/png.latex?\inline&space;\large&space;cos> denotes cosine similarity
 
+# Models
+Official scores for TREC-COVID task round 1 have been calculated for the following models:
 
- 
+| model                                                |   p@5  | ndcg@10 |   map  |  bpref |
+|------------------------------------------------------|:------:|:-------:|:------:|:------:|
+| distiluse-base-multilingual-cased                    | 0.4667 |  0.4269 | 0.1398 | 0.3573 |
+| xlm-r-distilroberta-base-paraphrase-v1               |        |         |        |        |
+| xlm-r-bert-base-nli-stsb-mean-tokens                 |        |         |        |        |
+| LaBSE                                                |  0.48  |  0.4214 | 0.1433 | 0.3706 |
+| distilbert-multilingual-nli-stsb-quora-ranking       |        |         |        |        |
+| distiluse-base-multilingual-cased + PCA              |        |         |        |        |
+| xlm-r-distilroberta-base-paraphrase-v1 + PCA         |        |         |        |        |
+| xlm-r-bert-base-nli-stsb-mean-tokens + PCA           |        |         |        |        |
+| LaBSE + PCA                                          |        |         |        |        |
+| distilbert-multilingual-nli-stsb-quora-ranking + PCA |        |         |        |        |
+| Ensemble 5  models                                   |        |         |        |        |
+| Ensemble 5 models + PCA                              |        |         |        |        |
+| Ensemble 2  best models                              |        |         |        |        |
+| Ensemble 2 best models + PCA                         |        |         |        |        |
+| BERT-base                                            | 0.3667 |  0.3044 | 0.0903 | 0.3218 |
+| RoBERTa                                              | 0.1933 |  0.1509 | 0.0386 | 0.2364 |
+| clinicalcovid-bert-nli                               | 0.5133 |  0.4263 | 0.1369 | 0.3719 |
+| scibert-nli                                          |  0.34  |  0.2908 | 0.0873 | 0.3286 |
+| biobert-nli                                          | 0.2867 |  0.2855 | 0.0934 | 0.3436 |
+
+
+# Metrics 
+
+
+| BM25 + Transformer-based bi-encoder model            |   p@5  | ndcg@10 |   map  |  bpref |
+|------------------------------------------------------|:------:|:-------:|:------:|:------:|
+| distiluse-base-multilingual-cased                    | 0.4667 |  0.4269 | 0.1398 | 0.3573 |
+| xlm-r-distilroberta-base-paraphrase-v1               |        |         |        |        |
+| xlm-r-bert-base-nli-stsb-mean-tokens                 |        |         |        |        |
+| LaBSE                                                |  0.48  |  0.4214 | 0.1433 | 0.3706 |
+| distilbert-multilingual-nli-stsb-quora-ranking       |        |         |        |        |
+| distiluse-base-multilingual-cased + PCA              |        |         |        |        |
+| xlm-r-distilroberta-base-paraphrase-v1 + PCA         |        |         |        |        |
+| xlm-r-bert-base-nli-stsb-mean-tokens + PCA           |        |         |        |        |
+| LaBSE + PCA                                          |        |         |        |        |
+| distilbert-multilingual-nli-stsb-quora-ranking + PCA |        |         |        |        |
+| Ensemble 5  models                                   |        |         |        |        |
+| Ensemble 5 models + PCA                              |        |         |        |        |
+| Ensemble 2  best models                              |        |         |        |        |
+| Ensemble 2 best models + PCA                         |        |         |        |        |
+| BERT-base                                            | 0.3667 |  0.3044 | 0.0903 | 0.3218 |
+| RoBERTa                                              | 0.1933 |  0.1509 | 0.0386 | 0.2364 |
+| clinicalcovid-bert-nli                               | 0.5133 |  0.4263 | 0.1369 | 0.3719 |
+| scibert-nli                                          |  0.34  |  0.2908 | 0.0873 | 0.3286 |
+| biobert-nli                                          | 0.2867 |  0.2855 | 0.0934 | 0.3436 |
+
+# How to use 
+
  
 ## References
 <a id="1">[1]</a> 
