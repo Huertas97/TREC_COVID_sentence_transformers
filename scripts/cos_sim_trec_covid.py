@@ -55,7 +55,7 @@ Options:
 
 
 Example:
-    python cos_sim_trec_covid.py -b 1000 -t -a -f --data ./trec_covid_data/df_docs.pkl --model distiluse-base-multilingual-cased""")
+    python ./scripts/cos_sim_trec_covid.py -b 1000 -t -a -f --data ./trec_covid_data/df_docs.pkl --model distiluse-base-multilingual-cased""")
     sys.exit()
     
 if options.help or not options.data or not options.model:

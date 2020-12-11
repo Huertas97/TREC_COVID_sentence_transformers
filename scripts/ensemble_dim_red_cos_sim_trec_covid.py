@@ -48,7 +48,7 @@ Usage:
 Options:
     -d, --data              Path to TREC-COVID parsed data
     -m, --model             Name of Transformer-based model from https://huggingface.co/pricing
-        -d, --data              Path to TREC-COVID parsed data
+    -p, --pca               Path to dataframe with model names and PCAs
     -m, --model             Name of Transformer-based model from https://huggingface.co/pricing
     -f, --fulltext          Bool: Include fulltext corpus for BM25 scoring
     -a, --abstract          Bool: Include abstract corpus for BM25 scoring  
@@ -57,7 +57,7 @@ Options:
 
 
 Example:
-    python ensemble_dim_red_cos_sim_trec_covid.py -b 1000 -t -a --data ./trec_covid_data/df_docs.pkl --model distiluse-base-multilingual-cased,distilbert-multilingual-nli-stsb-quora-ranking""")
+    python ./scripts/ensemble_dim_red_cos_sim_trec_covid.py -b 1000 -t -a --data ./trec_covid_data/df_docs.pkl --model distiluse-base-multilingual-cased,distilbert-multilingual-nli-stsb-quora-ranking""")
     sys.exit()
     
 if options.help or not options.data or not options.model:
@@ -103,30 +103,6 @@ nlp.max_length = 2000000
 # Sentence Transformer model
 class ensemble_stransformer:
     
-  def __init__(self, model_names):
-    self.emb_dim = 0
-    # args is a list with a list of all models
-    
-    for i, arg in enumerate(model_names):
-      sentence_model = SentenceTransformer(arg)
-      self.emb_dim += sentence_model.get_sentence_embedding_dimension()
-      new_model_att = {"model_"+str(i): sentence_model}
-      self.__dict__.update(new_model_att)
-
-  
-  def encode(self, sentences, convert_to_tensor=True, show_progress_bar=False):
-    embeddings = []
-    for i, att in enumerate(dir(self)):
-      if "model" in att:
-        emb = getattr(self, att).encode(sentences, convert_to_tensor=convert_to_tensor, show_progress_bar=show_progress_bar)
-        
-
-        embeddings.append(emb)
-
-
-
-class ensemble_stransformer:
-    
   def __init__(self, model_names, pca_list):
     self.emb_dim = 0
     
@@ -158,11 +134,9 @@ class ensemble_stransformer:
 
 
 
-
-
 logger.info("-------- Loading SentenceTransformer model --------")
 # Create list of name models and added it to SentEval Engine parameters
-PATH_TO_PCA = './PCA'
+PATH_TO_PCA = options.pca
 
 # Extract PCA fitted for the multilingual models
 df_pca_data = os.path.join(PATH_TO_PCA, options.data)

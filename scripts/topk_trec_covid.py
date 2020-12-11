@@ -29,9 +29,7 @@ parser.add_option('-f', '--file', type="string", help='Names of files used to su
 parser.add_option('-o', '--output', type="string", default = "topk_scores", help='Output file name')
 parser.add_option('-h', '--help', action='store_true', help='Show this help message and exit.')
 parser.add_option('-k', '--topk', type="int", default=1000, help='Top k scores will be retrieved from the scores files')
-# parser.add_option('-a', '--abstract', action='store_true', default=False, help='Include abstract corpus for BM25 scoring')
-# parser.add_option('-t', '--title', action='store_true', default=False, help='Include titles corpus for BM25 scoring')
-# parser.add_option('-b', '--batch', type="int", default= 100, help='Batch size')
+
 
 (options, args) = parser.parse_args()
 def print_usage():
@@ -43,10 +41,15 @@ Usage:
 Options:
     -d, --data              Path to TREC-COVID parsed data
     -m, --model             Name of Transformer-based model from https://huggingface.co/pricing
+    -f, --file              Names of files used to sum and rank
+    -o, --output            Output file name
+    -h. --help              Show this help message and exit
+    -k. --topk              Top k scores will be retrieved from the scores files
+    -p, --path              Path to scores files
 
 
 Example:
-    python topk_trec_covid.py --data ./trec_covid_data/df_docs.pkl -p ./results -f df_BM25_sc.pkl -o bm25_topk_sc""")
+    python ./scripts/topk_trec_covid.py --data ./trec_covid_data/df_docs.pkl -p ./results -f df_BM25_sc.pkl -o bm25_topk_sc""")
     sys.exit()
     
 if options.help or not options.file or not options.data:
@@ -115,7 +118,6 @@ df_results = pd.DataFrame({"topicid":top_k_topic_id,
               "run-tag": ["TFM"]* top_k_topic_id.shape[0]
               })
 os.makedirs("./results", exist_ok=True)
-df_results.to_pickle("./results/df_" + options.output + ".pkl")
 df_results.to_csv('./results/' + options.output +'.txt', header=None, index=None, sep='\t', mode='w')
 
 logger.info("-------- Finished --------")

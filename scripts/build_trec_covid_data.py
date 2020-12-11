@@ -29,10 +29,10 @@ download_url_cord = "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.
 urls = [download_url_docids, download_url_topics, download_url_qrels, download_url_cord]
 
 # PATHs
-path_docids = "/content/trec_covid_data/docids-rnd1.txt"
-path_topics = "/content/trec_covid_data/topics-rnd1.xml"
-path_qrels = "/content/trec_covid_data/qrels-rnd1.txt"
-path_cord = "/content/cord-19_2020-04-10.tar.gz"
+path_docids = "./trec_covid_data/docids-rnd1.txt"
+path_topics = "./trec_covid_data/topics-rnd1.xml"
+path_qrels = "./trec_covid_data/qrels-rnd1.txt"
+path_cord = "./trec_covid_data/cord-19_2020-04-10.tar.gz"
 paths = [path_docids, path_topics, path_qrels, path_cord]
 
 
@@ -53,7 +53,7 @@ class ProgressFileObject(io.FileIO):
         return io.FileIO.read(self, size)
 
 logger.info("------ Uncompressing cord-19_2020-04-10.tar.gz ------")
-obj = ProgressFileObject("./cord-19_2020-04-10.tar.gz")
+obj = ProgressFileObject("./trec_covid_data/cord-19_2020-04-10.tar.gz")
 tar = tarfile.open(fileobj=obj)
 tar.extractall()
 obj.progress.close()

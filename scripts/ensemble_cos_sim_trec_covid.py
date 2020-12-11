@@ -57,7 +57,7 @@ Options:
 
 
 Example:
-    python ensemble_cos_sim_trec_covid.py -b 1000 -t -a --data ./trec_covid_data/df_docs.pkl --model distiluse-base-multilingual-cased,distilbert-multilingual-nli-stsb-quora-ranking""")
+    python ./scripts/ensemble_cos_sim_trec_covid.py -b 1000 -t -a --data ./trec_covid_data/df_docs.pkl --model distiluse-base-multilingual-cased,distilbert-multilingual-nli-stsb-quora-ranking""")
     sys.exit()
     
 if options.help or not options.data or not options.model:
