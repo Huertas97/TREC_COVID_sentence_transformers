@@ -59,7 +59,7 @@ The premise of  Discounted Cumulative Gain (DCG) is that highly relevant documen
 NDCG@10 is a NDCG metric computed at a cut-off rank of 10. This is, considering only the top 10 results returned by the system.
 
 ## bpref
- The main Binary Preference (bpref) [[4](#4) measure represents the fraction of the top R nonrelevant docs that are retrieved after each relevant doc. Put another way: when looking at the R relevant docs, and the top R nonrelevant docs, if all relevant docs are to be preferred to nonrelevant docs, bpref is the fraction of the preferences that the ranking preserves.  Bpref penalises a system if it ranks a judged nonrelevant document above a judged relevant one, and is indepedendent of how the unjudged documents are retrieved.
+ The main Binary Preference (bpref) [[4]](#4) measure represents the fraction of the top R nonrelevant docs that are retrieved after each relevant doc. Put another way: when looking at the R relevant docs, and the top R nonrelevant docs, if all relevant docs are to be preferred to nonrelevant docs, bpref is the fraction of the preferences that the ranking preserves.  Bpref penalises a system if it ranks a judged nonrelevant document above a judged relevant one, and is indepedendent of how the unjudged documents are retrieved.
  
 
 
