@@ -13,7 +13,7 @@
  
 [TREC-COVID](https://ir.nist.gov/covidSubmit/index.html)  is an information retrieval (IR) shared task initiated to support clinicians and clinical research during the COVID-19 pandemic. According to [[1]](#1), the basic TREC (Text REtrieval Conference) ad hoc evaluation structure provides participants with a corpus and set of topics (which they fashion into queries entered into their IR systems). Participants then submit “runs” of up to N results per topic (usually N = 1000). 
  
-In this repository the code to evaluate  [Sentence Transformers](https://www.sbert.net/index.html) models in TREC-COVID collection is available. To evaluate a model in this IR task the approach explained in [[2]](#2) is followed with slightly differeces. For the BM25 relevance score we apply the well-known BM25 Okapi algorithm, and for the sentence embeddings computing we apply bi-encoders. Bi-encoders have less accuracy than cross-encoders [[3]](3), but requires less computational sources and make feasible its application into real-world problems.  
+In this repository the code to evaluate  [Sentence Transformers](https://www.sbert.net/index.html) models in TREC-COVID collection is available. To evaluate a model in this IR task the approach explained in [[2]](#2) is followed with slightly differeces. For the BM25 relevance score we apply the well-known BM25 Okapi algorithm, and for the sentence embeddings computing we apply bi-encoders. Bi-encoders have less accuracy than cross-encoders [[3]](#3), but requires less computational sources and make feasible its application into real-world problems.  
  
  
  # Scripts
@@ -59,7 +59,7 @@ The premise of  Discounted Cumulative Gain (DCG) is that highly relevant documen
 NDCG@10 is a NDCG metric computed at a cut-off rank of 10. This is, considering only the top 10 results returned by the system.
 
 ## bpref
- The main Binary Preference (bpref) [[4](4) measure represents the fraction of the top R nonrelevant docs that are retrieved after each relevant doc. Put another way: when looking at the R relevant docs, and the top R nonrelevant docs, if all relevant docs are to be preferred to nonrelevant docs, bpref is the fraction of the preferences that the ranking preserves.  Bpref penalises a system if it ranks a judged nonrelevant document above a judged relevant one, and is indepedendent of how the unjudged documents are retrieved.
+ The main Binary Preference (bpref) [[4](#4) measure represents the fraction of the top R nonrelevant docs that are retrieved after each relevant doc. Put another way: when looking at the R relevant docs, and the top R nonrelevant docs, if all relevant docs are to be preferred to nonrelevant docs, bpref is the fraction of the preferences that the ranking preserves.  Bpref penalises a system if it ranks a judged nonrelevant document above a judged relevant one, and is indepedendent of how the unjudged documents are retrieved.
  
 
 
