@@ -27,7 +27,17 @@
 
  <img src="https://latex.codecogs.com/png.latex?\inline&space;\LARGE&space;z"> represents the adjusted log-base such that the highest scoring document has a value of nine
  
-<img src=https://latex.codecogs.com/png.latex?\inline&space;\large&space;t&space;\in&space;T_i> represents possible field of topic <img src=https://latex.codecogs.com/png.latex?\inline&space;\large&space;T_i>
+<img src=https://latex.codecogs.com/png.latex?\inline&space;\large&space;t&space;\in&space;T_i> represents possible fields of topic <img src=https://latex.codecogs.com/png.latex?\inline&space;\large&space;T_i> (i.e, query, question and narrative). 
+
+<img src=https://latex.codecogs.com/png.latex?\inline&space;\large&space;f&space;\in&space;d> represents possible facets of the document (i.e, abstract or title)
+
+<img src=https://latex.codecogs.com/png.latex?\inline&space;\large&space;BM25> denotes BM25 Okapi scoring algorithm
+
+<img src=https://latex.codecogs.com/png.latex?\inline&space;\large&space;e(t),&space;e(f)> represent the topic field embedding and facet embedding, respectively
+
+<img src=https://latex.codecogs.com/png.latex?\inline&space;\large&space;cos> denotes cosine similarity
+
+
  
  
 ## References
