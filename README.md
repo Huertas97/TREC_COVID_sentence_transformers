@@ -7,6 +7,7 @@
  * [Metrics](#metrics)
  * [Models evaluated](#models-evalauted)
  * [How to use](#how-to-use)
+ * [References](#references)
  
  # TREC-COVID collection 
  
@@ -104,7 +105,7 @@ Official scores for TREC-COVID task round 1 have been calculated for the followi
 # How to use 
 
  
-## References
+# References
 <a id="1">[1]</a> 
 Roberts, K., Alam, T., Bedrick, S., Demner-Fushman, D., Lo, K., Soboroff, I., … Hersh, W. R. (2020). TREC-COVID: Rationale and structure of an information retrieval shared task for COVID-19. Journal of the American Medical Informatics Association, 27(9), 1431-1436. doi: 10.1093/jamia/ocaa091
 
