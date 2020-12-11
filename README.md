@@ -27,7 +27,7 @@
 
  <img src="https://latex.codecogs.com/png.latex?\inline&space;\LARGE&space;z"> represents the adjusted log-base such that the highest scoring document has a value of nine
  
-<img src=https://latex.codecogs.com/png.latex?\inline&space;\LARGE&space;t&space;\in&space;T_i> represents possible field of topic <img src=https://latex.codecogs.com/png.latex?\inline&space;\LARGE&space;T_i>
+<img src=https://latex.codecogs.com/png.latex?\inline&space;\large&space;t&space;\in&space;T_i> represents possible field of topic <img src=https://latex.codecogs.com/png.latex?\inline&space;\large&space;T_i>
  
  
 ## References
