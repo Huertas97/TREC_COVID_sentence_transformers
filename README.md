@@ -5,7 +5,7 @@
  * [TREC-COVID collection](#trec-covid-collection)
  * [Scripts](#scripts)
  * [Metrics](#metrics)
- * [Models evaluated](#models-evalauted)
+ * [Models evaluated](#models-evaluated)
  * [How to use](#how-to-use)
  * [References](#references)
  
