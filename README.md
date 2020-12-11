@@ -11,9 +11,9 @@
  
  # TREC-COVID collection 
  
- TREC-COVID [TREC-COVID](https://ir.nist.gov/covidSubmit/index.html)  is an information retrieval (IR) shared task initiated to support clinicians and clinical research during the COVID-19 pandemic. According to [[1]](#1), the basic TREC (Text REtrieval Conference) ad hoc evaluation structure provides participants with a corpus and set of topics (which they fashion into queries entered into their IR systems). Participants then submit “runs” of up to N results per topic (usually N = 1000). 
+[TREC-COVID](https://ir.nist.gov/covidSubmit/index.html)  is an information retrieval (IR) shared task initiated to support clinicians and clinical research during the COVID-19 pandemic. According to [[1]](#1), the basic TREC (Text REtrieval Conference) ad hoc evaluation structure provides participants with a corpus and set of topics (which they fashion into queries entered into their IR systems). Participants then submit “runs” of up to N results per topic (usually N = 1000). 
  
- In this repository the code to evaluate  [Sentence Transformers](https://www.sbert.net/index.html) models in TREC-COVID collection is available. To evaluate a model in this IR task the approach explained in [[2]](#2) is followed with slightly differeces. For the BM25 relevance score we apply the well-known BM25 Okapi algorithm, and for the sentence embeddings computing we apply bi-encoders. Bi-encoders have less accuracy than cross-encoders [REFERENCIA], but requires less computational sources and make feasible its application into real-world problems.  
+In this repository the code to evaluate  [Sentence Transformers](https://www.sbert.net/index.html) models in TREC-COVID collection is available. To evaluate a model in this IR task the approach explained in [[2]](#2) is followed with slightly differeces. For the BM25 relevance score we apply the well-known BM25 Okapi algorithm, and for the sentence embeddings computing we apply bi-encoders. Bi-encoders have less accuracy than cross-encoders [[3]](3), but requires less computational sources and make feasible its application into real-world problems.  
  
  
  # Scripts
@@ -52,20 +52,16 @@ Eg, if a method retrieves 15 docs of which 4 are relevant, then P20 is 0.2 (4/20
 
  ## map
 
-## bpref
- Main binary preference measure.\n\
-    Fraction of the top R nonrelevant docs that are retrieved after each\n\
-    relevant doc. Put another way: when looking at the R relevant docs, and\n\
-    the top R nonrelevant docs, if all relevant docs are to be preferred to\n\
-    nonrelevant docs, bpref is the fraction of the preferences that the\n\
-    ranking preserves.\n\
-    Cite: 'Retrieval Evaluation with Incomplete Information', Chris Buckley\n\
-    and Ellen Voorhees. In Proceedings of 27th SIGIR, 2004.\n",
- 
+
  ## ndcg@10
 The premise of  Discounted Cumulative Gain (DCG) is that highly relevant documents appearing lower in a search result list should be penalized as the graded relevance value is reduced logarithmically proportional to the position of the result. Since result set may vary in size among different queries or systems, to compare performances the normalised version is used (NDCG). NDCG divides the DCG score calculated by and ideal DCG (iDCG). The iDCG represents the perfect ranking algorithm that produces an nDCG of 1.0. 
 
 NDCG@10 is a NDCG metric computed at a cut-off rank of 10. This is, considering only the top 10 results returned by the system.
+
+## bpref
+ The main Binary Preference (bpref) [[4](4) measure represents the fraction of the top R nonrelevant docs that are retrieved after each relevant doc. Put another way: when looking at the R relevant docs, and the top R nonrelevant docs, if all relevant docs are to be preferred to nonrelevant docs, bpref is the fraction of the preferences that the ranking preserves.  Bpref penalises a system if it ranks a judged nonrelevant document above a judged relevant one, and is indepedendent of how the unjudged documents are retrieved.
+ 
+
 
 
 # Models evaluated
@@ -111,3 +107,9 @@ Roberts, K., Alam, T., Bedrick, S., Demner-Fushman, D., Lo, K., Soboroff, I., �
 
 <a id="2">[2]</a> 
 Nguyen, V., Rybinsk, M., Karimi, S., & Xing, Z. (2020). Searching Scientific Literature for Answers on COVID-19 Questions.
+
+<a id="3">[3]</a> 
+Reimers, N., & Gurevych, I. (2019). Sentence-bert: Sentence embeddings using siamese bert-networks. arXiv:1908.10084 [cs]. Recuperado de http://arxiv.org/abs/1908.10084
+
+<a id="4">[4</a> 
+Buckley, C., & Voorhees, E. M. (2004). Retrieval evaluation with incomplete information. Proceedings of the 27th Annual International Conference on Research and Development in Information Retrieval  - SIGIR ’04, 25. Sheffield, United Kingdom: ACM Press. doi: 10.1145/1008992.1009000
