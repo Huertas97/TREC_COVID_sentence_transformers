@@ -2,14 +2,24 @@
 
 # Index
  
- * 
  * [TREC-COVID collection](#trec-covid-collection)
  
  # TREC-COVID collection 
  
- TREC-COVID [TREC-COVID](https://ir.nist.gov/covidSubmit/index.html)  is an information retrieval (IR) shared task initiated to support clinicians and clinical research during the COVID-19 pandemic. According to [[1]](#1), 
+ TREC-COVID [TREC-COVID](https://ir.nist.gov/covidSubmit/index.html)  is an information retrieval (IR) shared task initiated to support clinicians and clinical research during the COVID-19 pandemic. According to [[1]](#1), the basic TREC (Text REtrieval Conference) ad hoc evaluation structure provides participants with a corpus and set of topics (which they fashion into queries entered into their IR systems). Participants then submit “runs” of up to N results per topic (usually N = 1000). 
+ 
+ In this repository the code to evaluate  [Sentence Transformers](https://www.sbert.net/index.html) models in TREC-COVID collection is available. To evaluate a model in this IR task the approach explained in [[2]](#2) is followed. 
  
  
+ # Scripts
+ The repository is composed of four scripts. 
+ The script `build_trec_covid_data.py` download the TREC-COVID data and CORD-19 documents valid for TREC-COVID round 1. 
+ The script `bm25_trec_covid.py` computes the relevance scores with [BM25 Okapi algorithm](https://github.com/dorianbrown/rank_bm25) between the different fields of the topic and the different facets of each document. For each topic the scores are log-normalised setting the log-base such that the highest scoring document hasa value of nine. 
+ The script `cos_sim_trec_covid.py` computes the embeddings for the different fields of the topic and the different facets of each document and reports the semantic similarity with a cosine similarity score.
+ 
+ The 
+ 
+ <img src="https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1">
  
  
  
@@ -17,3 +27,6 @@
 ## References
 <a id="1">[1]</a> 
 Roberts, K., Alam, T., Bedrick, S., Demner-Fushman, D., Lo, K., Soboroff, I., … Hersh, W. R. (2020). TREC-COVID: Rationale and structure of an information retrieval shared task for COVID-19. Journal of the American Medical Informatics Association, 27(9), 1431-1436. doi: 10.1093/jamia/ocaa091
+
+<a id="2">[2]</a> 
+Nguyen, V., Rybinsk, M., Karimi, S., & Xing, Z. (2020). Searching Scientific Literature for Answers on COVID-19 Questions.
