@@ -68,27 +68,7 @@ Official scores for TREC-COVID task round 1 have been calculated for the followi
 # Metrics 
 
 
-| BM25 + Transformer-based bi-encoder model            |   p@5  | ndcg@10 |   map  |  bpref |
-|------------------------------------------------------|:------:|:-------:|:------:|:------:|
-| distiluse-base-multilingual-cased                    | 0.4667 |  0.4269 | 0.1398 | 0.3573 |
-| xlm-r-distilroberta-base-paraphrase-v1               |        |         |        |        |
-| xlm-r-bert-base-nli-stsb-mean-tokens                 |        |         |        |        |
-| LaBSE                                                |  0.48  |  0.4214 | 0.1433 | 0.3706 |
-| distilbert-multilingual-nli-stsb-quora-ranking       |        |         |        |        |
-| distiluse-base-multilingual-cased + PCA              |        |         |        |        |
-| xlm-r-distilroberta-base-paraphrase-v1 + PCA         |        |         |        |        |
-| xlm-r-bert-base-nli-stsb-mean-tokens + PCA           |        |         |        |        |
-| LaBSE + PCA                                          |        |         |        |        |
-| distilbert-multilingual-nli-stsb-quora-ranking + PCA |        |         |        |        |
-| Ensemble 5  models                                   |        |         |        |        |
-| Ensemble 5 models + PCA                              |        |         |        |        |
-| Ensemble 2  best models                              |        |         |        |        |
-| Ensemble 2 best models + PCA                         |        |         |        |        |
-| BERT-base                                            | 0.3667 |  0.3044 | 0.0903 | 0.3218 |
-| RoBERTa                                              | 0.1933 |  0.1509 | 0.0386 | 0.2364 |
-| clinicalcovid-bert-nli                               | 0.5133 |  0.4263 | 0.1369 | 0.3719 |
-| scibert-nli                                          |  0.34  |  0.2908 | 0.0873 | 0.3286 |
-| biobert-nli                                          | 0.2867 |  0.2855 | 0.0934 | 0.3436 |
+Definition of the metrics
 
 # How to use 
 
