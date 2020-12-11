@@ -76,8 +76,23 @@ Official scores for TREC-COVID task round 1 have been calculated for the followi
     ranking preserves.\n\
     Cite: 'Retrieval Evaluation with Incomplete Information', Chris Buckley\n\
     and Ellen Voorhees. In Proceedings of 27th SIGIR, 2004.\n",
+ 
+ ## ndcg@10
+The premise of  Discounted Cumulative Gain (DCG) is that highly relevant documents appearing lower in a search result list should be penalized as the graded relevance value is reduced logarithmically proportional to the position of the result. Since result set may vary in size among different queries or systems, to compare performances the normalised version is used (NDCG). NDCG divides the DCG score calculated by and ideal DCG (iDCG). The iDCG represents the perfect ranking algorithm that produces an nDCG of 1.0. 
+
+NDCG@10 is a NDCG metric computed at a cut-off rank of 10. This is, considering only the top 10 results returned by the system.
 
 
+    
+## p@5
+Precision is the fraction of the documents retrieved that are relevant to the user's information need. P@5 is a precision metric computed at a cut-off rank of 5. This is, considering only the top 10 results returned by the system. If the cutoff is larger than the number of docs retrieved, then it is assumed nonrelevant docs fill in the rest.  
+
+Eg, if a method retrieves 15 docs of which 4 are relevant, then P20 is 0.2 (4/20). Precision is a very nice user oriented measure, and a good comparison number for a single topic, but it does not average well. For example, P20 has very different expected characteristics if there 300 total relevant docs for a topic as opposed to 10.
+
+precision at rank5 (P@5)
+  
+ ## map
+ 
 
 # How to use 
 
