@@ -37,6 +37,8 @@ parser.add_option('-f', '--fulltext', action='store_true', default=False, help='
 parser.add_option('-a', '--abstract', action='store_true', default=False, help='Include abstract corpus for BM25 scoring')
 parser.add_option('-t', '--title', action='store_true', default=False, help='Include titles corpus for BM25 scoring')
 parser.add_option('-b', '--batch', type="int", default= 100, help='Batch size')
+parser.add_option('-p', '--pca', type="string", help=' Path to dataframe with model names and PCAs')
+
 
 (options, args) = parser.parse_args()
 def print_usage():
@@ -109,23 +111,23 @@ class ensemble_stransformer:
     # Set models and PCAs as attributes
     for i, (model_arg, pca_arg) in enumerate(zip(model_names, pca_list)):
       sentence_model = SentenceTransformer(model_arg)
-      self.emb_dim += sentence_model.get_sentence_embedding_dimension()
       new_model_att = {"model_"+str(i): sentence_model,
                         "model_" + str(i) + "_pca": pca_arg}
+      self.emb_dim += pca_arg.n_components_
       self.__dict__.update(new_model_att)
 
   def PCA(self, name, embedding):
     for att in dir(self):
       if name + "_pca" == att:
         emb_dim_red = getattr(self, att).transform(embedding)
-        return emb_dim_red
+        return torch.from_numpy(emb_dim_red)
 
-  def encode(self, sentences):
+  def encode(self, sentences, convert_to_tensor=True, show_progress_bar=False):
     
     embeddings = []
     for att in dir(self):
       if "model_" in att and "pca" not in att:
-        emb = getattr(self, att).encode(sentences)
+        emb = getattr(self, att).encode(sentences, convert_to_tensor=convert_to_tensor, show_progress_bar=show_progress_bar)
         emb_dim_red = self.PCA(att, emb)
         embeddings.append(emb_dim_red)
    
@@ -139,7 +141,7 @@ logger.info("-------- Loading SentenceTransformer model --------")
 PATH_TO_PCA = options.pca
 
 # Extract PCA fitted for the multilingual models
-df_pca_data = os.path.join(PATH_TO_PCA, options.data)
+df_pca_data = PATH_TO_PCA
 df_ensemble_pca = pd.read_pickle(df_pca_data)
 models_names = df_ensemble_pca.Modelo.to_list()
 models_pca = df_ensemble_pca.PCA.to_list()
@@ -154,6 +156,7 @@ for name in model_names:
 # Creating the models with PCA that will be used to obtain embeddings by SentEval
 embedder = ensemble_stransformer(model_names, pca_list)
 dim = embedder.emb_dim
+print("Embedding dimensions:", dim)
 
 
 
