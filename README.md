@@ -4,9 +4,9 @@
  
  * [TREC-COVID collection](#trec-covid-collection)
  * [Scripts](#scripts)
- * [Metrics](metrics)
- * [Models evaluated](models-evalauted)
- * [How to use](how-to-use)
+ * [Metrics](#metrics)
+ * [Models evaluated](#models-evalauted)
+ * [How to use](#how-to-use)
  
  # TREC-COVID collection 
  
