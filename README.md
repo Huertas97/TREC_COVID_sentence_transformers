@@ -105,6 +105,37 @@ Official scores metrics for TREC-COVID task round 1 have been calculated for the
  
 
 # How to use 
+A detailed example of the usage of these scripts is shown in the `notebooks` folder. Anyway, the help documentation for each script is accesible using the following command:
+
+```
+$ python <script> --help
+```
+
+For example:
+```
+$ python ensemble_dim_red_cos_sim_trec_covid.py --help
+```
+
+```
+Usage:
+
+    python ensemble_dim_red_cos_sim_trec_covid.py [options] 
+
+Options:
+    -d, --data              Path to TREC-COVID parsed data
+    -m, --model             Name of Transformer-based model from https://huggingface.co/pricing
+    -p, --pca               Path to dataframe with model names and PCAs
+    -m, --model             Name of Transformer-based model from https://huggingface.co/pricing
+    -f, --fulltext          Bool: Include fulltext corpus for BM25 scoring
+    -a, --abstract          Bool: Include abstract corpus for BM25 scoring  
+    -t, --title             Bool: Include titles corpus for BM25 scoring  
+    -b, --batch             Batch size
+
+
+Example:
+    python ./scripts/ensemble_dim_red_cos_sim_trec_covid.py -b 1000 -t -a --data ./trec_covid_data/df_docs.pkl --model distiluse-base-multilingual-cased,distilbert-multilingual-nli-stsb-quora-ranking
+```
+
 
  
 # References
