@@ -86,6 +86,24 @@ Official scores metrics for TREC-COVID task round 1 have been calculated for the
 | LaBSE + PCA                                           |  <b>0.74</b>  |   0.63  | 0.2373 | <b>0.4045</b> |
 | distilbert-multilingual-nli-stsb-quora-ranking + PCA  | 0.6267 |  0.5218 | 0.1839 | 0.3552 |
 
+
+<br>
+
+|                BM25 + Ensemble method               |   p@5  | ndcg@10 |   map  |  bpref |
+|:---------------------------------------------------:|:------:|:-------:|:------:|:------:|
+| Ensemble 5 models *                                 | 0.7067 |  0.5874 | 0.2165 | <b>0.3811</b> |
+| Ensemble 5 models + PCA                             |  0.62  |  0.529  | 0.1907 | 0.3732 |
+| Ensemble 2 best models (best from STSb) **          | 0.6667 |  0.5425 | 0.2002 |  0.378 |
+| Ensemble 2 best models + PCA (best from STSb)       | 0.6067 |  0.5147 | 0.1861 | 0.3724 |
+| Ensemble 3 best models (best from TREC-COVID) ***   |  <b>0.74</b>  |  <b>0.6023</b> | <b>0.2325 | 0.3779</b> |
+| Ensemble 3 best models + PCA (best from TREC-COVID) | 0.6333 |  0.5297 | 0.1893 | 0.3588 |
+
+* distiluse-base-multilingual-cased, xlm-r-distilroberta-base-paraphrase-v1, xlm-r-bert-base-nli-stsb-mean-tokens, LaBSE, distilbert-multilingual-nli-stsb-quora-ranking
+** xlm-r-distilroberta-base-paraphrase-v1, xlm-r-bert-base-nli-stsb-mean-tokens
+*** distiluse-base-multilingual-cased, LaBSE, distilbert-multilingual-nli-stsb-quora-ranking
+
+
+
 <br>
 
 |   BM25 + Transfromer-based model (no task adapted)  |   p@5  | ndcg@10 |   map  |  bpref |
