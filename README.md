@@ -73,7 +73,7 @@ Official scores metrics for TREC-COVID task round 1 have been calculated for the
 
 <br>
 
-| BM25 + Sentence Transformer multilingual models |   p@5  | ndcg@10 |   map  |  bpref |
+| BM25 + [Sentence Transformer multilingual models](https://www.sbert.net/examples/training/multilingual/README.html) |   p@5  | ndcg@10 |   map  |  bpref |
 |:-----------------------------------------------:|:------:|:-------:|:------:|:------:|
 | distiluse-base-multilingual-cased               | 0.7067 |  0.6043 | 0.2268 | 0.3964 |
 | xlm-r-distilroberta-base-paraphrase-v1          |  0.72  |  0.5812 | 0.2127 | 0.3854 |
@@ -117,5 +117,7 @@ Nguyen, V., Rybinsk, M., Karimi, S., & Xing, Z. (2020). Searching Scientific Lit
 <a id="3">[3]</a> 
 Reimers, N., & Gurevych, I. (2019). Sentence-bert: Sentence embeddings using siamese bert-networks. arXiv:1908.10084 [cs]. Recuperado de http://arxiv.org/abs/1908.10084
 
-<a id="4">[4</a> 
+<a id="4">[4]</a> 
 Buckley, C., & Voorhees, E. M. (2004). Retrieval evaluation with incomplete information. Proceedings of the 27th Annual International Conference on Research and Development in Information Retrieval  - SIGIR ’04, 25. Sheffield, United Kingdom: ACM Press. doi: 10.1145/1008992.1009000
+
+Reimers, N., & Gurevych, I. (2020). Making monolingual sentence embeddings multilingual using knowledge distillation. arXiv:2004.09813 [cs]. Recuperado de http://arxiv.org/abs/2004.09813
