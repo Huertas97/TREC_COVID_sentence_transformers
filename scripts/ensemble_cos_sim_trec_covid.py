@@ -43,7 +43,7 @@ def print_usage():
     print("""
 Usage:
 
-    python cos_sim_trec_covid.py [options] 
+    python ensemble_cos_sim_trec_covid.py [options] 
 
 Options:
     -d, --data              Path to TREC-COVID parsed data
