@@ -47,8 +47,7 @@ Usage:
 
 Options:
     -d, --data              Path to TREC-COVID parsed data
-    -m, --model             Name of Transformer-based model from https://huggingface.co/pricing
-        -d, --data              Path to TREC-COVID parsed data
+    -d, --data              Path to TREC-COVID parsed data
     -m, --model             Name of Transformer-based model from https://huggingface.co/pricing
     -f, --fulltext          Bool: Include fulltext corpus for BM25 scoring
     -a, --abstract          Bool: Include abstract corpus for BM25 scoring  
