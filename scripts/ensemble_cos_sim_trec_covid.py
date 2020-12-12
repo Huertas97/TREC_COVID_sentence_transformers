@@ -47,13 +47,12 @@ Usage:
 
 Options:
     -d, --data              Path to TREC-COVID parsed data
-    -d, --data              Path to TREC-COVID parsed data
     -m, --model             Name of Transformer-based model from https://huggingface.co/pricing
     -f, --fulltext          Bool: Include fulltext corpus for BM25 scoring
     -a, --abstract          Bool: Include abstract corpus for BM25 scoring  
     -t, --title             Bool: Include titles corpus for BM25 scoring  
     -b, --batch             Batch size
-
+    -h, --help              Help documentation
 
 Example:
     python ./scripts/ensemble_cos_sim_trec_covid.py -b 1000 -t -a --data ./trec_covid_data/df_docs.pkl --model distiluse-base-multilingual-cased,distilbert-multilingual-nli-stsb-quora-ranking""")
