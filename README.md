@@ -103,9 +103,6 @@ Official scores metrics for TREC-COVID task round 1 have been calculated for the
 | xlm-r-bert-base-nli-stsb-mean-tokens            | 0.6267 |  0.5354 | 0.1918 | 0.3732 |
 | LaBSE                                           |  0.72  |  0.6316 | 0.2433 | 0.4036 |
 | distilbert-multilingual-nli-stsb-quora-ranking  | 0.7267 |  0.6006 | 0.2312 | 0.3773 |
-
-| BM25 + Multilingual models with dimensional reduction |   p@5  | ndcg@10 |   map  |  bpref |
-|:-----------------------------------------------------:|:------:|:-------:|:------:|:------:|
 | distiluse-base-multilingual-cased + PCA               | 0.6733 |  0.5896 |  0.223 | 0.3989 |
 | xlm-r-distilroberta-base-paraphrase-v1 + PCA          | 0.6533 |  0.5565 | 0.1994 | 0.3816 |
 | xlm-r-bert-base-nli-stsb-mean-tokens + PCA            |  0.58  |  0.5012 | 0.1779 | 0.3671 |
