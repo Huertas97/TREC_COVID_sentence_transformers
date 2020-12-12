@@ -120,7 +120,7 @@ Official scores metrics for TREC-COVID task round 1 have been calculated for the
 
 |      BM25 + Biomedical transfromer-based model      |  p@5 | ndcg@10 |   map  |  bpref |
 |:---------------------------------------------------:|:----:|:-------:|:------:|:------:|
-| clinicalcovid-bert-nli                              | 0.74 |  0.6303 | 0.2309 | 0.4074 |
+| [clinicalcovid-bert-nli](https://huggingface.co/manueltonneau/clinicalcovid-bert-nli)                             | 0.74 |  0.6303 | 0.2309 | 0.4074 |
 | scibert-nli                                         | 0.68 |  0.5861 | 0.2037 | 0.3781 |
 | biobert-nli                                         |  0.7 |  0.5923 | 0.2103 | 0.3902 |
   
