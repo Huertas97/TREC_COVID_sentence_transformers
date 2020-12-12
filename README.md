@@ -3,6 +3,7 @@
 # Index
  
  * [TREC-COVID collection](#trec-covid-collection)
+ * [Approach proposed](#approach-proposed)
  * [Scripts](#scripts)
  * [Metrics](#metrics)
  * [Models evaluated](#models-evaluated)
@@ -18,6 +19,7 @@ In this repository the code to evaluate  [Sentence Transformers](https://www.sbe
  
 [TREC-COVID](https://ir.nist.gov/covidSubmit/index.html) is an information retrieval (IR) shared task initiated to support clinicians and clinical research during the COVID-19 pandemic. According to [[1]](#1), the basic TREC (Text REtrieval Conference) ad hoc evaluation structure provides participants with a corpus and set of topics (which they fashion into queries entered into their IR systems). Participants then submit “runs” of up to N results per topic (usually N = 1000).
 
+# Approach proposed
 In this repository, the code to evaluate [Sentence Transformers](https://www.sbert.net/index.html) models in TREC-COVID collection is available. The approach explained in [[2]](#2) is followed to evaluate a model in this IR task with slight differences. As they did, documents
 created before December 31st 2019 (before the first reported case) are removed. For the BM25 relevance score, we apply the well-known BM25 Okapi algorithm. For the sentence embeddings computing, we apply bi-encoders. Bi-encoders have less accuracy than cross-encoders [[3]](#3), but requires less computational sources and make feasible its application into real-world problems.
  
