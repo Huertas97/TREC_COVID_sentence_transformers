@@ -55,7 +55,8 @@ Precision is the fraction of the documents retrieved that are relevant to the us
 Eg, if a method retrieves 15 docs of which 4 are relevant, then P20 is 0.2 (4/20). Precision is a very nice user oriented measure, and a good comparison number for a single topic, but it does not average well. For example, P20 has very different expected characteristics if there 300 total relevant docs for a topic as opposed to 10.
 
  ## map
-
+Precision measured after each relevant doc is retrieved, then averaged for the topic, and then averaged over topics (if more than one).
+This is the main single-valued number used to compare the entire rankings of two or more retrieval methods.  It has proven in practice to be useful and robust. The name of the measure is unfortunately inaccurate since it is calculated for a single topic (and thus don't want both 'mean' and 'average') but was dictated by common usage and the need to distiguish map from Precision averaged over topics
 
  ## ndcg@10
 The premise of  Discounted Cumulative Gain (DCG) is that highly relevant documents appearing lower in a search result list should be penalized as the graded relevance value is reduced logarithmically proportional to the position of the result. Since result set may vary in size among different queries or systems, to compare performances the normalised version is used (NDCG). NDCG divides the DCG score calculated by and ideal DCG (iDCG). The iDCG represents the perfect ranking algorithm that produces an nDCG of 1.0. 
