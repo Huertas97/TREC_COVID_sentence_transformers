@@ -98,9 +98,11 @@ Official scores metrics for TREC-COVID task round 1 have been calculated for the
 | Ensemble 3 best models (best from TREC-COVID) ***   |  <b>0.74</b>  |  <b>0.6023</b> | <b>0.2325 | 0.3779</b> |
 | Ensemble 3 best models + PCA (best from TREC-COVID) | 0.6333 |  0.5297 | 0.1893 | 0.3588 |
 
-* distiluse-base-multilingual-cased, xlm-r-distilroberta-base-paraphrase-v1, xlm-r-bert-base-nli-stsb-mean-tokens, LaBSE, distilbert-multilingual-nli-stsb-quora-ranking
-** xlm-r-distilroberta-base-paraphrase-v1, xlm-r-bert-base-nli-stsb-mean-tokens
-*** distiluse-base-multilingual-cased, LaBSE, distilbert-multilingual-nli-stsb-quora-ranking
+(*) distiluse-base-multilingual-cased, xlm-r-distilroberta-base-paraphrase-v1, xlm-r-bert-base-nli-stsb-mean-tokens, LaBSE, distilbert-multilingual-nli-stsb-quora-ranking
+
+(**) xlm-r-distilroberta-base-paraphrase-v1, xlm-r-bert-base-nli-stsb-mean-tokens
+
+(***) distiluse-base-multilingual-cased, LaBSE, distilbert-multilingual-nli-stsb-quora-ranking
 
 
 
