@@ -24,7 +24,7 @@ In this repository the code to evaluate  [Sentence Transformers](https://www.sbe
  
  * The script `bm25_trec_covid.py` computes the relevance scores with [BM25 Okapi algorithm](https://github.com/dorianbrown/rank_bm25) between the different fields of the topic and the different facets of each document. For each topic the scores are log-normalised setting the log-base such that the highest scoring document has a value of nine. 
  
- * The script `cos_sim_trec_covid.py` computes the embeddings for the different fields of the topic and the title and abstract facets of each document and reports the semantic similarity with a cosine similarity score.
+ * The script `cos_sim_trec_covid.py` computes the embeddings for the different fields of the topic and the title and abstract facets of each document and reports the semantic similarity with a cosine similarity score. The script `ensemble_cos_sim_trec_covid.py ` follows the same strategy, but computing the embeddings with an ensemble of different sentence transformer models. Finally, `ensemble_dim_red_cos_sim_trec_covid.py`combines the ensemble models with its repective dimentional reduction PCA. 
  
  In short, the final relevance score for a CORD-19 document considering a specific topic is calculated using the following formula:
  <p align="center">
