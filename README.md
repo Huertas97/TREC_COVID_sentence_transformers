@@ -71,6 +71,8 @@ NDCG@10 is a NDCG metric computed at a cut-off rank of 10. This is, considering 
 # Models evaluated
 Official scores metrics for TREC-COVID task round 1 have been calculated for the following models. You can consult the ranking of top 50 official runs in this [leaderboard](https://docs.google.com/spreadsheets/d/1NOu3ZVNar_amKwFzD4tGLz3ff2yRulL3Tbg_PzUSR_U/edit#gid=1068033221):
 
+<br>
+
 | BM25 + Sentence Transformer multilingual models |   p@5  | ndcg@10 |   map  |  bpref |
 |:-----------------------------------------------:|:------:|:-------:|:------:|:------:|
 | distiluse-base-multilingual-cased               | 0.7067 |  0.6043 | 0.2268 | 0.3964 |
@@ -90,6 +92,8 @@ Official scores metrics for TREC-COVID task round 1 have been calculated for the
 |:---------------------------------------------------:|:------:|:-------:|:------:|:------:|
 | [BERT-base](https://huggingface.co/bert-base-uncased)                                           | 0.7067 |  0.6071 | 0.2238 | 0.3801 |
 | [RoBERTa](https://huggingface.co/roberta-base)                                             |  0.68  |  0.5969 | 0.2239 |  0.379 |
+
+<br>
 
 |      BM25 + Biomedical transfromer-based model      |  p@5 | ndcg@10 |   map  |  bpref |
 |:---------------------------------------------------:|:----:|:-------:|:------:|:------:|
