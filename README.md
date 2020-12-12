@@ -84,7 +84,7 @@ Official scores metrics for TREC-COVID task round 1 have been calculated for the
 | LaBSE + PCA                                           |  0.74  |   0.63  | 0.2373 | 0.4045 |
 | distilbert-multilingual-nli-stsb-quora-ranking + PCA  | 0.6267 |  0.5218 | 0.1839 | 0.3552 |
 
-
+<br>
 |   BM25 + Transfromer-based model (no task adapted)  |   p@5  | ndcg@10 |   map  |  bpref |
 |:---------------------------------------------------:|:------:|:-------:|:------:|:------:|
 | [BERT-base](https://huggingface.co/bert-base-uncased)                                           | 0.7067 |  0.6071 | 0.2238 | 0.3801 |
