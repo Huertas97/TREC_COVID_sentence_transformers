@@ -96,9 +96,33 @@ Official scores metrics for TREC-COVID task round 1 have been calculated for the
 | biobert-nli                                          |   0.7  |  0.5923 | 0.2103 | 0.3902 |
 
 
+| BM25 + Sentence Transformer multilingual models |   p@5  | ndcg@10 |   map  |  bpref |
+|:-----------------------------------------------:|:------:|:-------:|:------:|:------:|
+| distiluse-base-multilingual-cased               | 0.7067 |  0.6043 | 0.2268 | 0.3964 |
+| xlm-r-distilroberta-base-paraphrase-v1          |  0.72  |  0.5812 | 0.2127 | 0.3854 |
+| xlm-r-bert-base-nli-stsb-mean-tokens            | 0.6267 |  0.5354 | 0.1918 | 0.3732 |
+| LaBSE                                           |  0.72  |  0.6316 | 0.2433 | 0.4036 |
+| distilbert-multilingual-nli-stsb-quora-ranking  | 0.7267 |  0.6006 | 0.2312 | 0.3773 |
 
-    
+| BM25 + Multilingual models with dimensional reduction |   p@5  | ndcg@10 |   map  |  bpref |
+|:-----------------------------------------------------:|:------:|:-------:|:------:|:------:|
+| distiluse-base-multilingual-cased + PCA               | 0.6733 |  0.5896 |  0.223 | 0.3989 |
+| xlm-r-distilroberta-base-paraphrase-v1 + PCA          | 0.6533 |  0.5565 | 0.1994 | 0.3816 |
+| xlm-r-bert-base-nli-stsb-mean-tokens + PCA            |  0.58  |  0.5012 | 0.1779 | 0.3671 |
+| LaBSE + PCA                                           |  0.74  |   0.63  | 0.2373 | 0.4045 |
+| distilbert-multilingual-nli-stsb-quora-ranking + PCA  | 0.6267 |  0.5218 | 0.1839 | 0.3552 |
 
+
+|   BM25 + Transfromer-based model (no task adapted)  |   p@5  | ndcg@10 |   map  |  bpref |
+|:---------------------------------------------------:|:------:|:-------:|:------:|:------:|
+| BERT-base                                           | 0.7067 |  0.6071 | 0.2238 | 0.3801 |
+| RoBERTa                                             |  0.68  |  0.5969 | 0.2239 |  0.379 |
+
+|      BM25 + Biomedical transfromer-based model      |  p@5 | ndcg@10 |   map  |  bpref |
+|:---------------------------------------------------:|:----:|:-------:|:------:|:------:|
+| clinicalcovid-bert-nli                              | 0.74 |  0.6303 | 0.2309 | 0.4074 |
+| scibert-nli                                         | 0.68 |  0.5861 | 0.2037 | 0.3781 |
+| biobert-nli                                         |  0.7 |  0.5923 | 0.2103 | 0.3902 |
   
 
  
